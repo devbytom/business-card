@@ -96,13 +96,13 @@ svg {
   position: relative;
 }
 .card1 {
-  background: url("./me.png")
+  background: url("./me.jpg")
     center center no-repeat;
   background-size: 330px;
   overflow: hidden;
   
   &:hover {
-    background: url("./me.png")
+    background: url("./me.jpg")
     right center no-repeat;
     background-size: 600px;
 
@@ -195,7 +195,6 @@ h2 {
   opacity: 0;
   transition: opacity 1s;
   font-size: 20px;
-  // color: #000;
   transition: all ease-in 0.5s;
 }
 

@@ -108,13 +108,13 @@ svg {
 }
 
 .card1 {
-  background: url("./me.png") center center no-repeat;
+  background: url("./me.jpg") center center no-repeat;
   background-size: 330px;
   overflow: hidden;
 }
 
 .card1:hover {
-  background: url("./me.png") right center no-repeat;
+  background: url("./me.jpg") right center no-repeat;
   background-size: 600px;
 }
 
