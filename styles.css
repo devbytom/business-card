@@ -1,3 +1,7 @@
+html, body {
+  min-height: 100%;
+}
+
 body {
   overflow: hidden;
   margin: 0;
@@ -27,9 +31,23 @@ body {
 @media (max-width: 768px) {
   .container {
     min-width: 100%;
-    min-height: 100%;
+    min-height: 80%;
+    height: 100vh;
     background: #11151e;
   }
+}
+
+.container::before {
+  position: absolute;
+  border-top: 1px solid #fff;
+  left: 5px;
+  right: 5px;
+  top: 10px;
+  bottom: 5px;
+  content: "";
+  -webkit-animation: anim-opacity 1.6s ease-in forwards;
+          animation: anim-opacity 1.6s ease-in forwards;
+  border-radius: 25px;
 }
 
 .border {
@@ -95,6 +113,12 @@ body {
   justify-items: center;
   -webkit-box-shadow: 0px 4px 30px -6px #11151e;
           box-shadow: 0px 4px 30px -6px #11151e;
+}
+
+@media (max-width: 768px) {
+  .c {
+    display: none;
+  }
 }
 
 svg {
@@ -169,15 +193,19 @@ svg {
     background: url("./me_rwd.jpg") center center no-repeat;
     background-size: 310px;
     overflow: hidden;
+    -webkit-animation: anim-size 0.7s ease-in forwards;
+            animation: anim-size 0.7s ease-in forwards;
   }
   .card1 h2 {
-    opacity: 1;
+    -webkit-animation: anim-opacity 1.6s ease-in forwards;
+            animation: anim-opacity 1.6s ease-in forwards;
     position: fixed;
     left: 0;
     top: 0;
   }
   .card1 .fa {
-    opacity: 1;
+    -webkit-animation: anim-opacity 2.5s ease-in forwards;
+            animation: anim-opacity 2.5s ease-in forwards;
     position: fixed;
     left: 20px;
   }
@@ -191,7 +219,7 @@ svg {
 @media (max-width: 768px) {
   .card1:hover {
     background: url("./me_rwd.jpg") center center no-repeat;
-    background-size: 360px;
+    background-size: 310px;
     overflow: hidden;
   }
 }
@@ -306,6 +334,12 @@ h2 {
   transition: all ease-in 0.5s;
 }
 
+@media (max-width: 768px) {
+  .fa {
+    font-size: 44px;
+  }
+}
+
 .icons {
   position: absolute;
   fill: #fff;
@@ -325,6 +359,13 @@ h2 {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+@media (max-width: 768px) {
+  .icons {
+    height: 150px;
+    top: 200px;
+  }
 }
 
 a {
@@ -348,5 +389,96 @@ a:visited {
 
 .copyright {
   display: none;
+}
+
+@-webkit-keyframes anim-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes anim-position {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 50px;
+  }
+}
+
+@keyframes anim-position {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 50px;
+  }
+}
+
+@-webkit-keyframes anim-size {
+  0% {
+    background-size: 200px;
+  }
+  100% {
+    background-size: 330px;
+  }
+}
+
+@keyframes anim-size {
+  0% {
+    background-size: 200px;
+  }
+  100% {
+    background-size: 330px;
+  }
+}
+
+.bounce-7 {
+  -webkit-animation: bounce-7 2s forwards;
+          animation: bounce-7 2s forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+          animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+}
+
+@-webkit-keyframes bounce-7 {
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  50% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
+}
+
+@keyframes bounce-7 {
+  0% {
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
+  }
+  50% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  100% {
+    -webkit-transform: translateX(-40px);
+            transform: translateX(-40px);
+  }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,10 +1,20 @@
 $backgroundColor: #11151e;
 $screen-md-min: 768px;
+$screen-md-max: 769px;
 
 @mixin md {
   @media (max-width: #{$screen-md-min}) {
       @content;
   }
+}
+@mixin lg {
+  @media (min-width: #{$screen-md-max}) {
+      @content;
+  }
+}
+
+html, body {
+	min-height: 100%;
 }
 
 body {
@@ -27,9 +37,23 @@ body {
 
   @include md() {
     min-width: 100%;
-    min-height: 100%;
+    min-height: 80%;
+    height: 100vh;
     background: #11151e;
   }
+}
+
+.container::before {
+    position: absolute;
+      border-top: 1px solid #fff;
+      // border-bottom: 1px solid #fff;
+      left: 5px;
+      right: 5px;
+      top: 10px;
+      bottom:5px;
+      content: "";
+      animation: anim-opacity 1.6s ease-in forwards;
+      border-radius: 25px;
 }
 
 .border {
@@ -86,6 +110,10 @@ body {
   justify-content: center;
   justify-items: center;
   box-shadow: 0px 4px 30px -6px $backgroundColor;
+
+  @include md() {
+    display: none;
+  }
 }
 
 svg {
@@ -112,15 +140,9 @@ svg {
     background: red;
     width: 100%;
     height: 60%;
+    // animation: anim-position 1.6s ease-in forwards;
     
   }
-}
-
-.box {
-  // @include md() {
-  //   position: absolute;
-  //   left: -20px;
-  // }
 }
 
 .card-overlay {
@@ -149,19 +171,22 @@ svg {
     center center no-repeat;
     background-size: 310px;
     overflow: hidden;
+    animation: anim-size 0.7s ease-in forwards;
 
     & h2 {
-      opacity: 1;
+      animation: anim-opacity 1.6s ease-in forwards;
       position: fixed;
       left: 0;
       top: 0;
     }
 
     & .fa {
-      opacity: 1;
+      animation: anim-opacity 2.5s ease-in forwards;
       position: fixed;
       left: 20px;
     }
+
+
   }
   
   &:hover {
@@ -172,7 +197,7 @@ svg {
     @include md() {
       background: url("./me_rwd.jpg")
       center center no-repeat;
-      background-size: 360px;
+      background-size: 310px;
       overflow: hidden;
     }
 
@@ -266,6 +291,10 @@ h2 {
   transition: opacity 1s;
   font-size: 20px;
   transition: all ease-in 0.5s;
+
+  @include md() {
+    font-size: 44px;
+  }
 }
 
 .icons {
@@ -279,6 +308,11 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+
+  @include md() {
+    height: 150px;
+    top: 200px;
+  }
 }
 
 a {
@@ -302,4 +336,42 @@ a {
 
 .copyright {
   display: none;
+}
+
+@keyframes anim-opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes anim-position {
+  0% {
+    left: 0
+  }
+  100% {
+    left: 50px;
+  }
+}
+
+@keyframes anim-size {
+  0% {
+    background-size: 200px;
+  }
+  100% {
+    background-size: 330px;
+  }
+}
+
+.bounce-7 {
+  animation: bounce-7 2s forwards;
+  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+
+@keyframes bounce-7 {
+  0%   { transform: translateX(-100px); }
+  50%  { transform: translateX(0px); }
+  100% { transform: translateX(-40px); }
 }
