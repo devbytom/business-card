@@ -148,6 +148,14 @@ svg {
     center center no-repeat;
     background-size: 310px;
     overflow: hidden;
+
+    & h2 {
+      opacity: 1;
+    }
+
+    & .fa {
+      opacity: 1;
+    }
   }
   
   &:hover {

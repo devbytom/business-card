@@ -170,6 +170,12 @@ svg {
     background-size: 310px;
     overflow: hidden;
   }
+  .card1 h2 {
+    opacity: 1;
+  }
+  .card1 .fa {
+    opacity: 1;
+  }
 }
 
 .card1:hover {
