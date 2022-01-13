@@ -327,9 +327,9 @@ h2 {
 
 .fa {
   opacity: 0;
+  font-size: 20px;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
-  font-size: 20px;
   -webkit-transition: all ease-in 0.5s;
   transition: all ease-in 0.5s;
 }
@@ -375,16 +375,6 @@ a {
 
 a:visited {
   all: unset;
-}
-
-.codepen-credit {
-  width: auto;
-  height: 25px;
-  font-size: 10px;
-  color: #808080;
-  position: absolute;
-  bottom: 0px;
-  left: 10px;
 }
 
 .copyright {
@@ -445,14 +435,16 @@ a:visited {
   }
 }
 
-.bounce-7 {
-  -webkit-animation: bounce-7 2s forwards;
-          animation: bounce-7 2s forwards;
-  -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
-          animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+@media (max-width: 768px) {
+  .slide-in {
+    -webkit-animation: slidein-anim 2s forwards;
+            animation: slidein-anim 2s forwards;
+    -webkit-animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+            animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  }
 }
 
-@-webkit-keyframes bounce-7 {
+@-webkit-keyframes slidein-anim {
   0% {
     -webkit-transform: translateX(-100px);
             transform: translateX(-100px);
@@ -467,7 +459,7 @@ a:visited {
   }
 }
 
-@keyframes bounce-7 {
+@keyframes slidein-anim {
   0% {
     -webkit-transform: translateX(-100px);
             transform: translateX(-100px);

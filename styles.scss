@@ -185,8 +185,6 @@ svg {
       position: fixed;
       left: 20px;
     }
-
-
   }
   
   &:hover {
@@ -288,8 +286,8 @@ h2 {
 }
 .fa {
   opacity: 0;
-  transition: opacity 1s;
   font-size: 20px;
+  transition: opacity 1s;
   transition: all ease-in 0.5s;
 
   @include md() {
@@ -323,17 +321,6 @@ a {
     all: unset;
   }
 }
-
-.codepen-credit {
-  width: auto;
-  height: 25px;
-  font-size: 10px;
-  color: #808080;
-  position: absolute;
-  bottom: 0px;
-  left: 10px
-}
-
 .copyright {
   display: none;
 }
@@ -365,12 +352,15 @@ a {
   }
 }
 
-.bounce-7 {
-  animation: bounce-7 2s forwards;
-  animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+.slide-in {
+  @include md() {
+    animation: slidein-anim 2s forwards;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  }
+
 }
 
-@keyframes bounce-7 {
+@keyframes slidein-anim {
   0%   { transform: translateX(-100px); }
   50%  { transform: translateX(0px); }
   100% { transform: translateX(-40px); }
